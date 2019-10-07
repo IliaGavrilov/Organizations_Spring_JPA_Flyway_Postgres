@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Информация о страховых организациях</title>
+</head>
+
+<body>
+    <div>
+        <h2>Заполнение данных организации</h2>
+        <form method="post" action="add">
+            <p>
+                <input type="text" name="tax" placeholder="ИНН: 1653001805"/>
+                <input type="text" name="reg" placeholder="ОГРН: 1111690088124"/>
+                <input type="text" style="width: 642px;" name="name" placeholder="Полное наименование: Общество с ограниченной ответственностью &quot;Ак Барс Страхование&quot;"/>
+            </p>
+            <p>
+                <input type="text" style="width: 321.5px;" name="region" placeholder="Регион: Республика Татарстан"/>
+                <input type="text" style="width: 214px;" name="city" placeholder="Город: Казань"/>
+                <input type="text" style="width: 420.5px;" name="address" placeholder="Адрес: ул. Университетская, д. 1"/>
+                <button type="submit">Добавить</button>
+            </p>
+        </form>
+    </div>
+
+    <div>
+        <h2>Поиск организаций</h2>
+            <ul>
+                <li><em>вводите один или несколько параметров</em></li>
+                <li><em>ставьте звездочку * в начале или конце, чтобы искать по частичному совпадению</em></li>
+            </ul>
+        <form method="post" action="search">
+            <p>
+                <input type="text" name="tax" placeholder="ИНН полностью или 653*">
+                <input type="text" name="reg" placeholder="ОГРН, например *116*">
+                <input type="text" style="width: 642px;" name="name" placeholder="Наименование полностью или *Барс Страхов*"/>
+            </p>
+            <p>
+                <input type="text" style="width: 321.5px;" name="region" placeholder="Регион полностью или *Татарс*"/>
+                <input type="text" style="width: 214px;" name="city" placeholder="Город полностью или Казан*"/>
+                <input type="text" style="width: 420.5px;" name="address" placeholder="Адрес полностью или *Универ*"/>
+                <button type="submit">Поиск / Сброс</button>
+            </p>
+        </form>
+    </div>
+
+    <div>
+        <h2>Результаты</h2>
+        <table cellpadding="5" style="width: 800px;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ИНН</th>
+                    <th>ОГРН</th>
+                    <th>Наименование</th>
+                    <th>Регион</th>
+                    <th>Город</th>
+                    <th>Адрес</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="organization : ${organizations}">
+                <td><span th:text="${organization.id}">#</span></td>
+                <td><span th:text="${organization.tax}">ИНН</span></td>
+                <td><span th:text="${organization.reg}">ОГРН</span></td>
+                <td><span th:text="${organization.name}">Наименование</span></td>
+                <td><span th:text="${organization.region}">Регион</span></td>
+                <td><span th:text="${organization.city}">Город</span></td>
+                <td><span th:text="${organization.address}">Адрес</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
