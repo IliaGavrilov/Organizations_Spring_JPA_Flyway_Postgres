@@ -3,6 +3,7 @@ package com.example.organizations.domain;
 import org.springframework.data.jpa.domain.Specification;
 import javax.persistence.criteria.Predicate;
 
+/* Класс с реализацией Spring Data JPA Specification для поиска записей по нескольким условиям */
 public class OrganizationSpecs {
 
     public static Specification<Organization> getOrganizationsByTaxAndRegAndNameAndRegionAndCityAndAddress(String tax,

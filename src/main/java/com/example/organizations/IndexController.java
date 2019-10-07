@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
 
-
+/* Контроллер веб-формы для заполнения полей справочника и поиска информации */
 @Controller
 public class IndexController {
     @Autowired

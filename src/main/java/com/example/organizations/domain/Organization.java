@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import javax.persistence.*;
 
+/* Класс сущности */
 @Entity
 @Table(name = "organization")
 public class Organization {
