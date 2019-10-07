@@ -112,7 +112,7 @@ public class Organization {
         return address;
     }
 
-    public void setAddress(String street) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
