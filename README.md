@@ -10,7 +10,7 @@
 ![4_multiple_search_results](https://user-images.githubusercontent.com/33284245/66296997-6e809f00-e8f7-11e9-8575-08e52d719c36.jpg)
 
 Технологии:
-- Spring Boot (MVC, Security, Data JPA); 
+- Spring Boot (MVC, Data JPA); 
 - Maven;
 - Flyway;
 - PosrgreSQL;
